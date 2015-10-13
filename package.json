@@ -1,0 +1,13 @@
+{
+  "name": "primalTest",
+  "version": "0.1.0",
+  "description": "Tests numbers to see if they are prime and returns their prime factors",
+  "main": "p.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Philip Ingrey",
+  "dependencies": {
+    "mocha": "~2.3.3"
+  }
+}
