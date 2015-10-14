@@ -36,5 +36,26 @@ describe("p", function(){
             assert.deepEqual(p(12345678901).pFactors, [857, 14405693]);
             assert.deepEqual(p(12345678901).pFactors, [857, 14405693]);
         });
-    })
+    });
+    describe("#pFactorize", function(){
+        it("Should restore the original number when multipled", function(){
+            var n,v,m;
+            for(var i=0;i<20;i++){
+                n = Math.round(Math.random()*100000)+2;
+                v = p(n).pFactorize;
+                m=1;
+                for(var k in v){m *= Math.pow(k, v[k]);}
+                assert.equal(n, m);
+            }
+        });
+        it("Factorize keys should be the pFactors array", function(){
+            var n,v,m;
+            for(var i=0;i<20;i++){
+                n = Math.round(Math.random()*100000)+2;
+                v = p(n);
+                assert.deepEqual(v.pFactors, Object.keys(v.pFactorize));
+            }
+        });
+    });
+
 });
