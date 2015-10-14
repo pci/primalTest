@@ -31,4 +31,4 @@ For large N, e.g. ~1.5GB for N=2^64
  
 ### Valid range
 
-Over 2^53-1 javascripts number format breaks down for integers and a arbitrary precision module like [BigInteger](https://github.com/peterolson/BigInteger.js/) would need to be employed.
+Over 2^53-1 javascripts number format breaks down for integers and an arbitrary precision module like [BigInteger](https://github.com/peterolson/BigInteger.js/) would need to be employed.

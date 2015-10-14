@@ -19,7 +19,7 @@ p = (function(){
         // smaller numbers. Alternatively if you're really going for speed up employ a bloom filter
         // on primeList
 
-        // The 0.001 stops floating point rounding errors due to MAth.sqrt
+        // The 0.001 stops floating point rounding errors due to Math.sqrt
         var maxSearch = Math.floor(Math.sqrt(n)+0.001);
 
 
@@ -46,7 +46,7 @@ p = (function(){
                     primeList.push(i);
                     if( n % i == 0){
                         // Factor found
-                        return primeList[i];
+                        return i;
                     }
                 }
             }
