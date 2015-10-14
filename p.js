@@ -1,8 +1,10 @@
 p = (function(){
+    "use strict";
+
     // Starting list of cached primes
-    primeList = [2,3,5,7,9,11];
-    // Starting tested range, note this should be an even number
-    testedTo = 15;
+    var primeList = [2,3,5,7,9,11],
+    // Starting tested range, note this should be an odd number
+        testedTo = 15;
 
     function findFirstFactor(n){
         // Given {n} finds the lowest factor of n, that isn't 1.
@@ -60,7 +62,7 @@ p = (function(){
             throw new Error("Expected a positive integer");
         }
 
-        // Force the input to be an integer by performing a bitwise operation
+        // Force the input to be an integer
         var m = parseInt(n,10),
             lf = findFirstFactor(m),
             out = {
@@ -114,5 +116,24 @@ p = (function(){
     };
 })();
 
-module.exports = p;
+// CommonJS
+if (typeof exports === "object" && typeof module === "object") {
+        module.exports = p;
+// <script>
+} else if (typeof window !== "undefined" || typeof self !== "undefined") {
+    // Prefer window to self
+    var global = typeof window !== "undefined" ? window : self;
 
+    // Save current p
+    var previousP = global.p;
+    global.p = p;
+
+    // Add a noConflict function:
+    global.p.noConflict = function () {
+        global.p = previousP;
+        return p;
+    };
+
+} else {
+    throw new Error("Sorry, but you are using an unsupported environment, please request support.");
+}

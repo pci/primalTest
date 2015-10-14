@@ -6,6 +6,13 @@ This module exposes one function that when called on a positive number returns:
     pFactors - [Array] a list of prime factors
     pFactorize - [Object] Where the keys are the prime factors and the values are their respective factor number 
 
+## Testing
+
+Tests use [mocha](http://mochajs.org/) and can be run with:
+
+    npm install
+    npm test
+
 ## Notes
 
 ### Algorithm
