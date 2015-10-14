@@ -6,6 +6,8 @@ This module exposes one function that when called on a positive number returns:
     pFactors - [Array] a list of prime factors
     pFactorize - [Object] Where the keys are the prime factors and the values are their respective factor number 
 
+During coding the factorize is calculated anyway, so it's added as an additional feature.
+
 ## Testing
 
 Tests use [mocha](http://mochajs.org/) and can be run with:
