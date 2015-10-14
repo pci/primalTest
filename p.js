@@ -68,13 +68,13 @@ p = (function(){
             // We need process some more numbers to get our tested list to sqrt(n)
             // +=2 due to skipping even numbers
             for(var i=testedTo+1; i<=maxSearch; i+=2){
+                testedTo=i;
                 if(findFirstFactor(i) === null){
                     primeList.push(i);
-                }
-                testedTo=i;
-                if( n % i == 0){
-                    // Factor found
-                    return primeList[i];
+                    if( n % i == 0){
+                        // Factor found
+                        return primeList[i];
+                    }
                 }
             }
         }
