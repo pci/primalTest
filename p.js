@@ -116,11 +116,12 @@ p = (function(){
     };
 })();
 
-// CommonJS
 if (typeof exports === "object" && typeof module === "object") {
-        module.exports = p;
-// <script>
+    // CommonJS
+    module.exports = p;
 } else if (typeof window !== "undefined" || typeof self !== "undefined") {
+    // <script>
+
     // Prefer window to self
     var global = typeof window !== "undefined" ? window : self;
 
@@ -128,7 +129,6 @@ if (typeof exports === "object" && typeof module === "object") {
     var previousP = global.p;
     global.p = p;
 
-    // Add a noConflict function:
     global.p.noConflict = function () {
         global.p = previousP;
         return p;

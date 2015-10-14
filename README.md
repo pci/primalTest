@@ -6,7 +6,7 @@ This module exposes one function that when called on a positive number returns:
     pFactors - [Array] a list of prime factors
     pFactorize - [Object] Where the keys are the prime factors and the values are their respective factor number 
 
-During coding the factorize is calculated anyway, so it's added as an additional feature.
+Factorization is performed by iteratively finding the lowest factor and diving by that factor. During this procedure the prime factorize of the number is also calculated at no additional CPU cost, so it's added as an additional feature.
 
 ## Testing
 
@@ -19,7 +19,7 @@ Tests use [mocha](http://mochajs.org/) and can be run with:
 
 ### Algorithm
 
-This code is based on the fact that if a number is not divisible by all the primes less than it's sqrt then the number is prime. By storing the discovered primes between runs large speed-ups can occur.
+This code is based on the fact that if a number is not divisible by all the primes less than its square root then the number is prime. By storing the discovered primes between runs large speed-ups can occur.
 
 ### Memory usage
 
