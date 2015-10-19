@@ -1,4 +1,4 @@
-p = (function(){
+var p = (function(){
     "use strict";
 
     // Starting list of cached primes
